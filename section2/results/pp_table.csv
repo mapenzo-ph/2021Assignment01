@@ -1,0 +1,12 @@
+map-by,components,lat[usec](thin),bw[GB/s](thin),lat[usec](gpu),bw[GB/s](gpu)
+core,ucx,0.197,6.4,0.217,6.4
+core,intel,0.232,5.5,0.289,5.2
+core,vader,0.269,4.5,0.279,4.4
+core,tcp,5.48,5.3,5.0,5.1
+socket,ucx,0.397,5.6,0.412,5.6
+socket,intel,0.43,4.2,0.475,4.3
+socket,vader,0.598,3.9,0.564,3.7
+socket,tcp,7.95,3.2,8.62,3.1
+node,ucx,0.983,12.0,1.33,12.0
+node,intel,1.05,12.0,1.33,12.0
+node,tcp,16.4,2.6,15.4,2.2

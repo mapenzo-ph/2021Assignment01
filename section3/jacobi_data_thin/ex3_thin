@@ -1,0 +1,41 @@
+#!/bin/bash
+
+#PBS -q dssc
+#PBS -N ex3_thin
+#PBS -l nodes=2:ppn=24
+#PBS -l walltime=01:00:00
+#PBS -o stdout
+#PBS -e stderr
+
+cd $PBS_O_WORKDIR
+
+if [ ! -d results ]
+then mkdir results
+fi
+
+# load module and compile
+cd $PBS_O_WORKDIR
+module load openmpi-4.1.1+gnu-9.3.0
+mpif77 -ffixed-line-length-none Jacobi_MPI_vectormode.F -o jacobi3D
+
+# get baseline
+mpirun -np 1 --report-bindings jacobi3D < input.1200 > results/1_single_thin 2>&1
+
+# run on same socket
+mpirun -np 4 --map-by ppr:4:socket --report-bindings jacobi3D < input.1200 > results/4_single_thin 2>&1
+mpirun -np 8 --map-by ppr:8:socket --report-bindings jacobi3D < input.1200 > results/8_single_thin 2>&1
+mpirun -np 12 --map-by ppr:12:socket --report-bindings jacobi3D < input.1200 > results/12_single_thin 2>&1
+
+#run on two sockets
+mpirun -np 4 --map-by ppr:2:socket --report-bindings jacobi3D < input.1200 > results/4_double_thin 2>&1
+mpirun -np 8 --map-by ppr:4:socket --report-bindings jacobi3D < input.1200 > results/8_double_thin 2>&1
+mpirun -np 12 --map-by ppr:6:socket --report-bindings jacobi3D < input.1200 > results/12_double_thin 2>&1
+
+# run on two nodes
+mpirun -n 12 --map-by ppr:6:node --report-bindings jacobi3D < input.1200 > results/12_two_thin 2>&1
+mpirun -n 24 --map-by ppr:12:node --report-bindings jacobi3D < input.1200 > results/24_two_thin 2>&1
+mpirun -n 48 --map-by ppr:24:node --report-bindings jacobi3D < input.1200 > results/48_two_thin 2>&1
+
+# clean extra files
+rm -f jacobi3D
+rm -f *.dat

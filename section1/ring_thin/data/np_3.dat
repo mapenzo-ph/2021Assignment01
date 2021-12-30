@@ -1,0 +1,16 @@
+[ct1pt-tnode007:13338] MCW rank 0 bound to socket 0[core 0[hwt 0]]: [B/././././././././././.][./././././././././././.]
+[ct1pt-tnode007:13338] MCW rank 1 bound to socket 0[core 1[hwt 0]]: [./B/./././././././././.][./././././././././././.]
+[ct1pt-tnode007:13338] MCW rank 2 bound to socket 0[core 2[hwt 0]]: [././B/././././././././.][./././././././././././.]
+--------------------------------------------------------------------------
+WARNING: There was an error initializing an OpenFabrics device.
+
+  Local host:   ct1pt-tnode007
+  Local device: mlx5_0
+--------------------------------------------------------------------------
+I am processor 0 and my final messages are 3,-3 with tag 0
+
+Average elapsed time: 0.000002
+I am processor 1 and my final messages are 3,-3 with tag 10
+I am processor 2 and my final messages are 3,-3 with tag 20
+[ct1pt-tnode007:13338] 2 more processes have sent help message help-mpi-btl-openib.txt / error in device init
+[ct1pt-tnode007:13338] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages

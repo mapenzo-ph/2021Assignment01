@@ -1,0 +1,78 @@
+mpirun -np 2 -env I_MPI_DEBUG 4 -genv I_MPI_PIN_PROCESSOR_LIST shift=core ./IMB-MPI1 PingPong -msglog 28
+IPL INFO> Not all caches3 will be used with default 'compact' order. 'bunch' order was selected
+[0] MPI startup(): Intel(R) MPI Library, Version 2019 Update 9  Build 20200923 (id: abd58e492)
+[0] MPI startup(): Copyright (C) 2003-2020 Intel Corporation.  All rights reserved.
+[0] MPI startup(): library kind: release
+[0] MPI startup(): libfabric version: 1.10.1-impi
+[0] MPI startup(): libfabric provider: mlx
+[0] MPI startup(): Rank    Pid      Node name       Pin cpu
+[0] MPI startup(): 0       47636    ct1pg-gnode001  0
+[0] MPI startup(): 1       47637    ct1pg-gnode001  4
+#----------------------------------------------------------------
+#    Intel(R) MPI Benchmarks 2018, MPI-1 part
+#----------------------------------------------------------------
+# Date                  : Tue Dec 14 14:43:13 2021
+# Machine               : x86_64
+# System                : Linux
+# Release               : 5.7.9-1.el7.elrepo.x86_64
+# Version               : #1 SMP Wed Jul 15 10:37:17 EDT 2020
+# MPI Version           : 3.1
+# MPI Thread Environment: 
+
+
+# Calling sequence was: 
+
+# ./IMB-MPI1 PingPong -msglog 28
+
+# Minimum message length in bytes:   0
+# Maximum message length in bytes:   268435456
+#
+# MPI_Datatype                   :   MPI_BYTE 
+# MPI_Datatype for reductions    :   MPI_FLOAT
+# MPI_Op                         :   MPI_SUM  
+#
+#
+
+# List of Benchmarks to run:
+
+# PingPong
+
+#---------------------------------------------------
+# Benchmarking PingPong 
+# #processes = 2 
+#---------------------------------------------------
+       #bytes #repetitions      t[usec]   Mbytes/sec
+            0         1000         0.28         0.00
+            1         1000         0.29         3.47
+            2         1000         0.29         6.82
+            4         1000         0.29        13.79
+            8         1000         0.29        27.77
+           16         1000         0.29        55.29
+           32         1000         0.30       107.43
+           64         1000         0.30       214.61
+          128         1000         0.30       426.22
+          256         1000         0.32       807.17
+          512         1000         0.57       904.92
+         1024         1000         0.61      1690.42
+         2048         1000         0.74      2776.83
+         4096         1000         0.95      4305.33
+         8192         1000         1.52      5400.13
+        16384         1000         2.37      6898.73
+        32768         1000         3.60      9110.97
+        65536          640         5.84     11218.20
+       131072          320         8.61     15226.55
+       262144          160        15.10     17363.58
+       524288           80        41.07     12766.06
+      1048576           40        83.45     12565.51
+      2097152           20       158.57     13225.56
+      4194304           10       397.51     10551.42
+      8388608            5      1041.92      8051.07
+     16777216            2      2128.78      7881.14
+     33554432            1      5978.93      5612.11
+     67108864            1     12357.12      5430.79
+    134217728            1     25474.60      5268.69
+    268435456            1     52254.62      5137.07
+
+
+# All processes entering MPI_Finalize
+

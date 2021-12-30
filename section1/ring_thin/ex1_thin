@@ -1,0 +1,42 @@
+#!/bin/bash
+
+#PBS -q dssc
+#PBS -N ex1_thin
+#PBS -l nodes=2:ppn=24
+#PBS -l walltime=00:20:00
+#PBS -o stdout
+#PBS -e stderr
+
+cd $PBS_O_WORKDIR
+if [ ! -d data ]
+then mkdir data
+fi
+
+# load relevant module
+module load openmpi-4.1.1+gnu-9.3.0
+
+# compile
+mpicc ring.c -o ring
+
+# define run function
+function rring {
+	mpirun -np $1 --map-by core --report-bindings ring > data/np_$1.dat 2>&1
+}
+
+# run for many times
+for i in {1..48}
+do
+	rring $i
+done
+
+# write results file
+echo '#processors,time' > times.csv
+
+for i in {1..48}
+do
+	time=$(cat data/np_$i.dat | grep Average | cut -d ' ' -f 4)
+	echo "$i,$time" >> times.csv
+done
+
+rm ring
+

@@ -1,0 +1,7 @@
+type,comm_level,lat[usec],bw[GB/s]
+thin,core,0.197,6.4
+gpu,core,0.217,6.4
+thin,socket,0.397,5.6
+gpu,socket,0.412,5.6
+thin,node,0.983,12.0
+gpu,node,1.33,12.0

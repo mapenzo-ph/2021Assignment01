@@ -1,0 +1,24 @@
+[ct1pg-gnode003:43762] MCW rank 0 bound to socket 0[core 0[hwt 0]]: [B./../../../../../../../../../../..][../../../../../../../../../../../..]
+[ct1pg-gnode003:43762] MCW rank 1 bound to socket 0[core 0[hwt 1]]: [.B/../../../../../../../../../../..][../../../../../../../../../../../..]
+[ct1pg-gnode003:43762] MCW rank 2 bound to socket 0[core 1[hwt 0]]: [../B./../../../../../../../../../..][../../../../../../../../../../../..]
+[ct1pg-gnode003:43762] MCW rank 3 bound to socket 0[core 1[hwt 1]]: [../.B/../../../../../../../../../..][../../../../../../../../../../../..]
+[ct1pg-gnode003:43762] MCW rank 4 bound to socket 0[core 2[hwt 0]]: [../../B./../../../../../../../../..][../../../../../../../../../../../..]
+[ct1pg-gnode003:43762] MCW rank 5 bound to socket 0[core 2[hwt 1]]: [../../.B/../../../../../../../../..][../../../../../../../../../../../..]
+[ct1pg-gnode003:43762] MCW rank 6 bound to socket 0[core 3[hwt 0]]: [../../../B./../../../../../../../..][../../../../../../../../../../../..]
+--------------------------------------------------------------------------
+WARNING: There was an error initializing an OpenFabrics device.
+
+  Local host:   ct1pg-gnode003
+  Local device: mlx5_0
+--------------------------------------------------------------------------
+I am processor 0 and my final messages are 21,-21 with tag 0
+
+Average elapsed time: 0.000005
+I am processor 1 and my final messages are 21,-21 with tag 10
+I am processor 2 and my final messages are 21,-21 with tag 20
+I am processor 3 and my final messages are 21,-21 with tag 30
+I am processor 4 and my final messages are 21,-21 with tag 40
+I am processor 5 and my final messages are 21,-21 with tag 50
+I am processor 6 and my final messages are 21,-21 with tag 60
+[ct1pg-gnode003:43762] 6 more processes have sent help message help-mpi-btl-openib.txt / error in device init
+[ct1pg-gnode003:43762] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages

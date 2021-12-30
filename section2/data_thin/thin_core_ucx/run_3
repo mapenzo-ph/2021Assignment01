@@ -1,0 +1,79 @@
+mpirun -np 2 --map-by ppr:1:core --mca pml ucx --report-bindings ./IMB-MPI1 PingPong -msglog 28
+[ct1pt-tnode007:18081] MCW rank 0 bound to socket 0[core 0[hwt 0]]: [B/././././././././././.][./././././././././././.]
+[ct1pt-tnode007:18081] MCW rank 1 bound to socket 0[core 1[hwt 0]]: [./B/./././././././././.][./././././././././././.]
+--------------------------------------------------------------------------
+WARNING: There was an error initializing an OpenFabrics device.
+
+  Local host:   ct1pt-tnode007
+  Local device: mlx5_0
+--------------------------------------------------------------------------
+#----------------------------------------------------------------
+#    Intel(R) MPI Benchmarks 2018, MPI-1 part
+#----------------------------------------------------------------
+# Date                  : Tue Dec 14 14:35:08 2021
+# Machine               : x86_64
+# System                : Linux
+# Release               : 5.7.9-1.el7.elrepo.x86_64
+# Version               : #1 SMP Wed Jul 15 10:37:17 EDT 2020
+# MPI Version           : 3.1
+# MPI Thread Environment: 
+
+
+# Calling sequence was: 
+
+# ./IMB-MPI1 PingPong -msglog 28
+
+# Minimum message length in bytes:   0
+# Maximum message length in bytes:   268435456
+#
+# MPI_Datatype                   :   MPI_BYTE 
+# MPI_Datatype for reductions    :   MPI_FLOAT
+# MPI_Op                         :   MPI_SUM  
+#
+#
+
+# List of Benchmarks to run:
+
+# PingPong
+
+#---------------------------------------------------
+# Benchmarking PingPong 
+# #processes = 2 
+#---------------------------------------------------
+       #bytes #repetitions      t[usec]   Mbytes/sec
+            0         1000         0.20         0.00
+            1         1000         0.19         5.34
+            2         1000         0.19        10.67
+            4         1000         0.19        21.31
+            8         1000         0.19        42.51
+           16         1000         0.19        83.95
+           32         1000         0.22       142.61
+           64         1000         0.23       282.21
+          128         1000         0.31       413.71
+          256         1000         0.33       776.16
+          512         1000         0.41      1233.86
+         1024         1000         0.51      2026.43
+         2048         1000         0.74      2767.09
+         4096         1000         1.11      3689.65
+         8192         1000         1.85      4421.30
+        16384         1000         2.93      5585.13
+        32768         1000         4.97      6591.13
+        65536          640         8.36      7843.69
+       131072          320        15.09      8683.73
+       262144          160        13.81     18988.19
+       524288           80        25.12     20872.71
+      1048576           40        55.11     19025.48
+      2097152           20       142.64     14702.28
+      4194304           10       314.30     13345.04
+      8388608            5       885.43      9474.02
+     16777216            2      2324.30      7218.18
+     33554432            1      5235.83      6408.62
+     67108864            1     10487.15      6399.15
+    134217728            1     20880.82      6427.80
+    268435456            1     41705.14      6436.51
+
+
+# All processes entering MPI_Finalize
+
+[ct1pt-tnode007:18081] 1 more process has sent help message help-mpi-btl-openib.txt / error in device init
+[ct1pt-tnode007:18081] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages

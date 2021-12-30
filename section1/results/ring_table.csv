@@ -1,0 +1,6 @@
+node,binding,latency[usec]
+thin,same socket,0.35
+gpu,same socket,0.46
+thin,same node,0.54
+gpu,same node,0.70
+thin,different nodes,1.20

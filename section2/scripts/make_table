@@ -1,0 +1,13 @@
+#!/bin/bash
+
+echo 'type,level,framework,latency,bandwidth' > results/tmp_table.csv
+
+for file in upload/*
+do
+    type=$(basename $file | cut -d '_' -f 1)
+    level=$(basename $file | cut -d '_' -f 2)
+    framework=$(basename $file | cut -d '_' -f 3 | sed 's/,/\+/g' | cut -d '.' -f 1)
+    lat=$(cat $file | grep latency | cut -d ' ' -f 4)
+    ban=$(cat $file | grep latency | cut -d ' ' -f 9) 
+    echo "$type,$level,$framework,$lat,$ban"  >> results/tmp_table.csv
+done

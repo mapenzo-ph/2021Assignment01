@@ -1,0 +1,45 @@
+#!/bin/bash
+
+# create results directory
+results=upload
+if [ ! -d ${results} ]
+then mkdir ${results}
+fi
+
+#clean files
+for dir in $1/*
+do
+    name=$(basename $dir)
+    for file in $dir/run_*
+    do  
+        echo '#bytes,#repetitions,t[usec],Mbytes/sec' > ${file}_tmp
+        cat $file | awk '{$1=$1};1' | sed 's/ /,/g' | grep ^[0-9] | grep -v ^30,31 >> ${file}_tmp
+    done
+
+    # get command line and write in results file
+    cat $dir/run_0 | head -n 1 | sed 's/\$:/#/g'> ${results}/$name.csv
+
+    # get hosts
+    if [[ $dir == *"_node_intel" ]]
+    then
+        hosts=$(cat $dir/run_0 | grep ct1 | awk '{print "host " NR ": " $6}' | awk '$1=$1' ORS=' | ')
+        echo "# $hosts" >> ${results}/$name.csv
+    elif [[ $dir == *"_intel" ]]
+    then
+        hosts=$(cat $dir/run_0 | grep ct1 | awk '{print "host " NR ": " $6 " CPU " $7}' | awk '$1=$1' ORS=' | ')
+        echo "# $hosts" >> ${results}/$name.csv
+    else
+        hosts=$(cat $dir/run_0 | grep MCW | sed 's/\[/ /g' | sed 's/:/ /g' | \
+                awk '{print "host " NR ": " $1 " socket " $9 " core " $11}' | awk '$1=$1' ORS=' | ')
+        echo "# $hosts" >> ${results}/$name.csv
+    fi
+
+    # get number of reps
+    nreps=$(ls $dir/ | grep tmp | wc -l)
+
+    # analyze data
+    python3 scripts/make_csv.py $dir $nreps
+
+    # remove tmp files
+    rm $dir/*tmp
+done

@@ -1,0 +1,49 @@
+#!/bin/bash
+
+if [ ! -d upload ]
+then mkdir upload
+fi
+
+echo 'type,#procs,nx,ny,nz,comm_level,T_tot[sec],T_sweep[sec],P_prg[MLUPs],' > results/jacobi_data.csv
+
+for file in $1/* $2/*
+do 
+    name=$(basename $file)
+
+    tmp=$(cat $file | grep Maxtime | awk '{$1=$1};1' | cut -d ' ' -f 9)
+    maxtime=($(echo $tmp))
+    tmp=$(cat $file | grep Maxtime | awk '{$1=$1};1' | cut -d ' ' -f 10)
+    mintime=($(echo $tmp))
+    tmp=$(cat $file | grep Maxtime | awk '{$1=$1};1' | cut -d ' ' -f 11)
+    jacobimi=($(echo $tmp))
+    tmp=$(cat $file | grep Maxtime | awk '{$1=$1};1' | cut -d ' ' -f 12)
+    jacobima=($(echo $tmp))
+    tmp=$(cat $file | grep Maxtime | awk '{$1=$1};1' | cut -d ' ' -f 16)
+    mlups=($(echo $tmp))
+
+    grid=$(cat $file | grep 'Process grid' | awk '{$1=$1};1' | awk '{print $5, $6, $7}' | sed 's/ /,/g') 
+  
+    echo '' > tmp_data
+    for i in {0..9}
+    do
+        echo "${maxtime[$i]},${mintime[$i]},${jacobima[$i]},${jacobimi[$i]},${mlups[$i]}" >> tmp_data
+    done
+
+    avg=$(cat tmp_data | sed 's/,/ /g' | awk '{printf("%lf %lf %lf\n",$1,($3+$4)*0.5,$5)}' | awk '{sum+=$1; sum2+=$2; sum3+=$3} END {print sum/10; print sum2/10; print sum3/10}')
+    type=$(echo $name | cut -d '_' -f 3)
+    level=$(echo $name | cut -d '_' -f 2)
+    if [ "$level" == "two" ]
+    then comm_level='node'
+    elif [ "$level" == "double" ]
+    then comm_level='socket'
+    else comm_level='core'
+    fi
+    nprocs=$(echo $name | cut -d '_' -f 1) 
+    echo "$type,$nprocs,$grid,$comm_level,$(echo $avg | sed 's/ /,/g')" >> results/jacobi_data.csv 
+
+done
+
+rm tmp_data
+
+
+

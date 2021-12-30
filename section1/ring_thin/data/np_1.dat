@@ -1,0 +1,10 @@
+[ct1pt-tnode007:13305] MCW rank 0 bound to socket 0[core 0[hwt 0]]: [B/././././././././././.][./././././././././././.]
+--------------------------------------------------------------------------
+WARNING: There was an error initializing an OpenFabrics device.
+
+  Local host:   ct1pt-tnode007
+  Local device: mlx5_0
+--------------------------------------------------------------------------
+I am processor 0 and my final messages are 0,0 with tag 0
+
+Average elapsed time: 0.000000

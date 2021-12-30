@@ -1,0 +1,74 @@
+[ct1pg-gnode003:47703] MCW rank 0 bound to socket 0[core 0[hwt 0]]: [B./../../../../../../../../../../..][../../../../../../../../../../../..]
+[ct1pg-gnode003:47703] MCW rank 1 bound to socket 0[core 0[hwt 1]]: [.B/../../../../../../../../../../..][../../../../../../../../../../../..]
+[ct1pg-gnode003:47703] MCW rank 2 bound to socket 0[core 1[hwt 0]]: [../B./../../../../../../../../../..][../../../../../../../../../../../..]
+[ct1pg-gnode003:47703] MCW rank 3 bound to socket 0[core 1[hwt 1]]: [../.B/../../../../../../../../../..][../../../../../../../../../../../..]
+[ct1pg-gnode003:47703] MCW rank 4 bound to socket 0[core 2[hwt 0]]: [../../B./../../../../../../../../..][../../../../../../../../../../../..]
+[ct1pg-gnode003:47703] MCW rank 5 bound to socket 0[core 2[hwt 1]]: [../../.B/../../../../../../../../..][../../../../../../../../../../../..]
+[ct1pg-gnode003:47703] MCW rank 6 bound to socket 0[core 3[hwt 0]]: [../../../B./../../../../../../../..][../../../../../../../../../../../..]
+[ct1pg-gnode003:47703] MCW rank 7 bound to socket 0[core 3[hwt 1]]: [../../../.B/../../../../../../../..][../../../../../../../../../../../..]
+[ct1pg-gnode003:47703] MCW rank 8 bound to socket 0[core 4[hwt 0]]: [../../../../B./../../../../../../..][../../../../../../../../../../../..]
+[ct1pg-gnode003:47703] MCW rank 9 bound to socket 0[core 4[hwt 1]]: [../../../../.B/../../../../../../..][../../../../../../../../../../../..]
+[ct1pg-gnode003:47703] MCW rank 10 bound to socket 0[core 5[hwt 0]]: [../../../../../B./../../../../../..][../../../../../../../../../../../..]
+[ct1pg-gnode003:47703] MCW rank 11 bound to socket 0[core 5[hwt 1]]: [../../../../../.B/../../../../../..][../../../../../../../../../../../..]
+[ct1pg-gnode003:47703] MCW rank 12 bound to socket 0[core 6[hwt 0]]: [../../../../../../B./../../../../..][../../../../../../../../../../../..]
+[ct1pg-gnode003:47703] MCW rank 13 bound to socket 0[core 6[hwt 1]]: [../../../../../../.B/../../../../..][../../../../../../../../../../../..]
+[ct1pg-gnode003:47703] MCW rank 14 bound to socket 0[core 7[hwt 0]]: [../../../../../../../B./../../../..][../../../../../../../../../../../..]
+[ct1pg-gnode003:47703] MCW rank 15 bound to socket 0[core 7[hwt 1]]: [../../../../../../../.B/../../../..][../../../../../../../../../../../..]
+[ct1pg-gnode003:47703] MCW rank 16 bound to socket 0[core 8[hwt 0]]: [../../../../../../../../B./../../..][../../../../../../../../../../../..]
+[ct1pg-gnode003:47703] MCW rank 17 bound to socket 0[core 8[hwt 1]]: [../../../../../../../../.B/../../..][../../../../../../../../../../../..]
+[ct1pg-gnode003:47703] MCW rank 18 bound to socket 0[core 9[hwt 0]]: [../../../../../../../../../B./../..][../../../../../../../../../../../..]
+[ct1pg-gnode003:47703] MCW rank 19 bound to socket 0[core 9[hwt 1]]: [../../../../../../../../../.B/../..][../../../../../../../../../../../..]
+[ct1pg-gnode003:47703] MCW rank 20 bound to socket 0[core 10[hwt 0]]: [../../../../../../../../../../B./..][../../../../../../../../../../../..]
+[ct1pg-gnode003:47703] MCW rank 21 bound to socket 0[core 10[hwt 1]]: [../../../../../../../../../../.B/..][../../../../../../../../../../../..]
+[ct1pg-gnode003:47703] MCW rank 22 bound to socket 0[core 11[hwt 0]]: [../../../../../../../../../../../B.][../../../../../../../../../../../..]
+[ct1pg-gnode003:47703] MCW rank 23 bound to socket 0[core 11[hwt 1]]: [../../../../../../../../../../../.B][../../../../../../../../../../../..]
+[ct1pg-gnode003:47703] MCW rank 24 bound to socket 1[core 12[hwt 0]]: [../../../../../../../../../../../..][B./../../../../../../../../../../..]
+[ct1pg-gnode003:47703] MCW rank 25 bound to socket 1[core 12[hwt 1]]: [../../../../../../../../../../../..][.B/../../../../../../../../../../..]
+[ct1pg-gnode003:47703] MCW rank 26 bound to socket 1[core 13[hwt 0]]: [../../../../../../../../../../../..][../B./../../../../../../../../../..]
+[ct1pg-gnode003:47703] MCW rank 27 bound to socket 1[core 13[hwt 1]]: [../../../../../../../../../../../..][../.B/../../../../../../../../../..]
+[ct1pg-gnode003:47703] MCW rank 28 bound to socket 1[core 14[hwt 0]]: [../../../../../../../../../../../..][../../B./../../../../../../../../..]
+[ct1pg-gnode003:47703] MCW rank 29 bound to socket 1[core 14[hwt 1]]: [../../../../../../../../../../../..][../../.B/../../../../../../../../..]
+[ct1pg-gnode003:47703] MCW rank 30 bound to socket 1[core 15[hwt 0]]: [../../../../../../../../../../../..][../../../B./../../../../../../../..]
+[ct1pg-gnode003:47703] MCW rank 31 bound to socket 1[core 15[hwt 1]]: [../../../../../../../../../../../..][../../../.B/../../../../../../../..]
+--------------------------------------------------------------------------
+WARNING: There was an error initializing an OpenFabrics device.
+
+  Local host:   ct1pg-gnode003
+  Local device: mlx5_0
+--------------------------------------------------------------------------
+I am processor 0 and my final messages are 496,-496 with tag 0
+
+Average elapsed time: 0.000040
+I am processor 1 and my final messages are 496,-496 with tag 10
+I am processor 2 and my final messages are 496,-496 with tag 20
+I am processor 3 and my final messages are 496,-496 with tag 30
+I am processor 4 and my final messages are 496,-496 with tag 40
+I am processor 5 and my final messages are 496,-496 with tag 50
+I am processor 6 and my final messages are 496,-496 with tag 60
+I am processor 7 and my final messages are 496,-496 with tag 70
+I am processor 8 and my final messages are 496,-496 with tag 80
+I am processor 9 and my final messages are 496,-496 with tag 90
+I am processor 10 and my final messages are 496,-496 with tag 100
+I am processor 11 and my final messages are 496,-496 with tag 110
+I am processor 12 and my final messages are 496,-496 with tag 120
+I am processor 13 and my final messages are 496,-496 with tag 130
+I am processor 14 and my final messages are 496,-496 with tag 140
+I am processor 15 and my final messages are 496,-496 with tag 150
+I am processor 16 and my final messages are 496,-496 with tag 160
+I am processor 17 and my final messages are 496,-496 with tag 170
+I am processor 18 and my final messages are 496,-496 with tag 180
+I am processor 19 and my final messages are 496,-496 with tag 190
+I am processor 20 and my final messages are 496,-496 with tag 200
+I am processor 21 and my final messages are 496,-496 with tag 210
+I am processor 22 and my final messages are 496,-496 with tag 220
+I am processor 23 and my final messages are 496,-496 with tag 230
+I am processor 24 and my final messages are 496,-496 with tag 240
+I am processor 25 and my final messages are 496,-496 with tag 250
+I am processor 26 and my final messages are 496,-496 with tag 260
+I am processor 27 and my final messages are 496,-496 with tag 270
+I am processor 28 and my final messages are 496,-496 with tag 280
+I am processor 29 and my final messages are 496,-496 with tag 290
+I am processor 30 and my final messages are 496,-496 with tag 300
+I am processor 31 and my final messages are 496,-496 with tag 310
+[ct1pg-gnode003:47703] 31 more processes have sent help message help-mpi-btl-openib.txt / error in device init
+[ct1pg-gnode003:47703] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages

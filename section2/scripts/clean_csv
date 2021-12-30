@@ -1,0 +1,10 @@
+#!/bin/bash
+
+if [ ! -d clean ]
+then mkdir clean
+fi
+
+for file in upload/*
+do
+    cat $file | awk '{$1=$1};1' | sed 's/ /,/g' | sed '1,3d' > clean/$(basename $file)
+done

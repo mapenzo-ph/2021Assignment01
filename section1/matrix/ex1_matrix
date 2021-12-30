@@ -1,0 +1,48 @@
+#!/bin/bash
+
+#PBS -q dssc
+#PBS -N ex1_matrix
+#PBS -l nodes=1:ppn=24
+#PBS -l walltime=01:00:00
+#PBS -o stdout
+#PBS -e stderr
+
+cd $PBS_O_WORKDIR
+if [ ! -d data ]
+then mkdir data
+fi
+
+module load openmpi-4.1.1+gnu-9.3.0
+mpicc sum3Dmatrix.c -o sum3Dmatrix
+
+function run_fixed_size {
+    cmd="mpirun -np 24 sum3Dmatrix $1 $2 $3"
+
+    dir="data/$1"
+    if [ ! -d $dir ]
+    then mkdir $dir
+    fi
+
+    grids=(24_1_1 12_2_1 8_3_1 6_4_1 6_2_2 4_3_2)
+    
+    for grid in "${grids[@]}"
+    do
+        grid_dir="$dir/$grid"
+        if [ ! -d ${grid_dir} ]
+        then mkdir ${grid_dir}
+        fi
+
+        args=$(echo $grid | sed 's/_/ /g')
+
+        for i in {1..10}
+        do
+            ${cmd} $args > ${grid_dir}/run_$i.dat 2>&1
+        done
+    done
+}
+
+run_fixed_size 800 300 100
+run_fixed_size 1200 200 100
+run_fixed_size 2400 100 100
+
+rm sum3Dmatrix
